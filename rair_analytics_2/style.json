@@ -1,0 +1,15 @@
+{
+    "QMainWindow" : [
+        {
+            "navigation":[
+                {
+                    "minimize" : "minimize_window_button",
+                    "close" : "close_window_button",
+                    "restore" : "expand_window_button",
+                    "moveWindow" : "header_frame",
+                    "titleBar" : "header_frame"
+                }
+            ]
+        }
+    ]
+}

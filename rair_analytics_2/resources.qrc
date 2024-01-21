@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/icons8-online-shop-shopping-bag-100.png</file>
+    <file>images/icons8-increase-100.png</file>
+    <file>images/icons8-market-64.png</file>
+    <file>images/icons8-chart-64.png</file>
+    <file>images/icons8-menu-50.png</file>
+    <file>images/icons8-menu.svg</file>
+    <file>images/icons8-enlarge-96.png</file>
+    <file>images/icons8-minus-96.png</file>
+    <file>images/icons8-chart-24.png</file>
+    <file>images/icons8-chart-96.png</file>
+    <file>images/icons8-circle-chart-96.png</file>
+    <file>images/icons8-close-24.png</file>
+    <file>images/icons8-line-chart-96.png</file>
+  </qresource>
+</RCC>

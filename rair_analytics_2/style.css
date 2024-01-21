@@ -1,0 +1,59 @@
+* {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+#label, #label_3 {
+    font-size: 28px;
+}
+
+#MainDashboardLabel, #MainDashboardLabel_2 {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    text-align: center;  /* Center-align text */
+    font-weight: bold;  /* Set font weight to bold */
+}
+
+
+body {
+    background-color: #f8f8f8; /* Light Grayish Background */
+}
+
+#centralwidget {
+    background-color: #ffffff; /* White Background */
+    border: 1px solid #dcdcdc; /* Light Gray Border */
+}
+
+#FirstDashboardPage, #AveragePrice, #TotalSales, #NumberofCategories {
+    background-color: #2a7d93; /* Dark Teal */
+    border: none;
+}
+
+#CategoryList, #AvgPriceChartView, #TotalSalesView, #AgeGroupView, #GenderView, #LocationView, #LineGraphView, #selectButton, #frame_7, #frame_17 {
+    background-color: #2b2b2b; /* Dark Gray */
+    border-radius: 8px;
+    border: none;
+}
+
+#frame_20, #icon_only_widget {
+    background-color: #373737; /* Charcoal Gray */
+    border-radius: 8px;
+    border: none;
+}
+#frame_4, #header_frame, #frame_3, #frame_6 {
+    background-color: black;
+}
+#frame_4 QPushButton, #frame_8 QPushButton, #frame_10 QPushButton, #header_nav QPushButton {
+    border-radius: 15px;
+    border: none;
+    background-color: #528bff; /* Royal Blue */
+}
+
+#frame_4 QPushButton:hover, #frame_8 QPushButton:hover, #frame_10 QPushButton:hover, #header_nav QPushButton:hover {
+    background-color: #4a74bf; /* Slightly Darker Blue on Hover */
+    border: none;
+}

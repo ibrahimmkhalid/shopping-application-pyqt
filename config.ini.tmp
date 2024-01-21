@@ -1,0 +1,20 @@
+[rairdata_db]
+host = host
+database = database
+user = user
+password = password
+[rairdata_wh]
+host = host
+database = database
+user = user
+password = password
+[local_wh]
+host = localhost
+database = database
+user = user
+password = password
+[local_db]
+host = localhost
+database = database
+user = user
+password = password
