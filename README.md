@@ -1,6 +1,8 @@
 # RAIR Data Shopping Application
 _Course project for DATA-225 (Database Systems for Analytics)_
 
+![Homescreen](./screen.png)
+
 Team Members:
 - Ibrahim Khalid
 - Rutuja Kokate
