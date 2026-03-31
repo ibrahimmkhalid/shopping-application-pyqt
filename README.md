@@ -3,49 +3,87 @@ _Course project for DATA-225 (Database Systems for Analytics)_
 
 ![Homescreen](./screen.png)
 
-Team Members:
-- Ibrahim Khalid
-- Rutuja Kokate
-- Sung Won Lee
-- Ravjot Singh
-
-Technologies used:
-- MySQL
-- Python
-- PyQt5
-
-Datasources:
-- `./data/users_mock.csv` and `./data/promo_codes_mock.csv` are generated files from mockaroo.com 
-- `./data/flipkart_com-ecommerce_sample.csv` is a dataset from https://www.kaggle.com/datasets/PromptCloudHQ/flipkart-products
+**Team:** Ibrahim Khalid · Rutuja Kokate · Sung Won Lee · Ravjot Singh
 
 ---
 
-## Instructions to run project
-1. Make a copy of 'config.ini.tmp' and name it 'config.ini'. Replace with relevant credentials
-2. Note the config options at the top of the data.py script and configure them to your requirements
-3. Make sure the following databases are avaialble to connect to
-    > rairdata_db  
-    > rairdata_wh  
-4. Run the data.py script to initialize the databases
-5. Run the command "python main.py"  
-   Optionally, you can use some command line arguments for ease of use as described bellow  
+## Overview
+
+A full-stack desktop shopping application built with Python and PyQt5, backed by a
+MySQL transactional database and a separate star-schema data warehouse. The project
+demonstrates end-to-end database design — from schema creation and stored procedures
+to ETL pipelines and analytical dashboards.
+
+---
+
+## Features
+
+**Shopper**
+- Browse and search products by name and category with pagination
+- Add/remove items from a live shopping cart with real-time stock tracking
+- Apply promo codes at checkout with automatic discount calculation
+- Place orders and view full order history with itemized details
+- Update shipping address from within the app
+
+**Admin**
+- Manage products: edit pricing/stock, add new listings
+- Manage customers: search by email, edit profile and admin privileges
+- Manage promo codes: create new codes and expire existing ones
+- Trigger ETL to refresh the data warehouse
+- Launch analytics dashboards as external processes
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| GUI | Python, PyQt5 |
+| Database | MySQL (stored procedures, transactions) |
+| Data Warehouse | MySQL (star schema — fact & dimension tables) |
+| ETL | MySQL stored procedure (`perform_etl`) |
+| Data Processing | pandas |
+
+---
+
+## Architecture
+
+The application uses two separate MySQL databases:
+
+- **`rairdata_db`** — transactional database (users, products, orders, promo codes)
+- **`rairdata_wh`** — analytical data warehouse with a star schema:
+  - Fact tables: `fct_order_and_order_items`, `fct_promotions`
+  - Dimension tables: `dim_datetime`, `dim_products`, `dim_customer_demographics`, `dim_customer_locations`
+
+All database interactions go through stored procedures. Application logic is cleanly
+separated into GUI classes, a utility/data-access layer (`UtilsClass`), and data
+models (`UserData`, `CartData`).
+
+---
+
+## Running the Project
+
+1. Copy `config.ini.tmp` → `config.ini` and fill in your credentials
+2. Ensure databases `rairdata_db` and `rairdata_wh` exist
+3. Run the setup script (creates schema, seeds data, runs ETL):
+   ```bash
+   python data.py
    ```
-   Usage: python main.py [--local] [--auto-login|--auto-login-admin] [--help]
-   By default, the program will use the remote database and require manual login.
-   --help:             show this message
-   --local:            use local database
-   --auto-login:       login automatically with saved normal user account
-   --auto-login-admin: login automatically with saved admin user account
-                       normal user account will be logged in if both --auto-login 
-                       and --auto-login-admin are specified
+4. Launch the application:
+   ```bash
+   python main.py [--local] [--auto-login | --auto-login-admin]
    ```
 
-If logging in manually, use the following login credentials
+**Demo credentials**
 
-User account:
-- email: user@rair.com
-- password: 12345678
+| Role | Email | Password |
+|---|---|---|
+| User | user@rair.com | 12345678 |
+| Admin | admin@rair.com | 12345678 |
 
-Admin account:
-- email: admin@rair.com
-- password: 12345678
+---
+
+## Data Sources
+
+- User and promo code data generated via [Mockaroo](https://mockaroo.com)
+- Product data from the [Flipkart Products dataset](https://www.kaggle.com/datasets/PromptCloudHQ/flipkart-products) on Kaggle
